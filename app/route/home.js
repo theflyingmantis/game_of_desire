@@ -28,6 +28,18 @@ exports.register = function(server, options, next) {
       }
     }
   });
+
+  server.route({
+    path: '/src/{path*}',
+    method: 'GET',
+    handler: {
+      directory: {
+        path: 'app/views/src',
+        redirectToSlash: true,
+        index: true,
+      }
+    }
+  });
   next();
 };
 
