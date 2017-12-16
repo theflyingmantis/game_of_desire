@@ -6,7 +6,7 @@ const Route = require('./app/route/home.js');
 
 
 const server = new Hapi.Server();
-server.connection({ port: 3000, host: 'localhost' });
+server.connection({ port:process.env.PORT || 3000, host: '0.0.0.0' });
 
 
 server.register(
